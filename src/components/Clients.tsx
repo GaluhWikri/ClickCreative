@@ -2,12 +2,13 @@
 // import { Building2, Briefcase, Award, Star } from 'lucide-react';
 
 const clients = [
-  { name: 'C1' }, // Placeholder untuk Logo Client 1
-  { name: 'C2' }, // Placeholder untuk Logo Client 2
-  { name: 'C3' }, // Placeholder untuk Logo Client 3
-  { name: 'C4' }, // Placeholder untuk Logo Client 4
-  { name: 'C5' }, // Placeholder untuk Logo Client 5
-  { name: 'C6' }  // Placeholder untuk Logo Client 6
+  // DIUBAH: Item pertama ditambahkan 'name' untuk konsistensi data
+  { name: 'Client 1', image: '/client/logo politeknik kesehatan banten.png' },
+  { name: 'Client 2', image: '/client/kazehq logo.jpeg' },
+  { name: 'Client 3', image: '/client/folkanic fest.jpeg' },
+  { name: 'Client 4', image: '/client/kunkarima logo.jpg' },
+  { name: 'Client 5', image: '/client/politeknik industri petrokimia banten logo.jpg' },
+  { name: 'Client 6', image: '/client/ponpes logo.jpg' },
 ];
 
 // Data Statistik yang terlihat di gambar
@@ -40,13 +41,15 @@ export default function Clients() {
           {clients.map((client, index) => (
             <div
               key={index}
-              // Gaya kotak logo sesuai gambar
-              className="aspect-square flex items-center justify-center p-6 border border-gray-200 transition-all duration-300"
+              // Gaya kotak logo
+              className="aspect-square flex items-center justify-center p-6 border border-gray-200 transition-all duration-300 hover:border-black"
             >
-              {/* Ini adalah placeholder teks, idealnya diganti dengan tag <img> logo klien */}
-              <span className="text-2xl font-semibold text-gray-300">
-                {client.name}
-              </span>
+              <img
+                src={client.image}
+                alt={client.name}
+                // grayscale-0 memastikan warna asli di kondisi normal.
+                className="max-h-full max-w-full object-contain filter grayscale-0 hover:grayscale transition-all duration-300"
+              />
             </div>
           ))}
         </div>
