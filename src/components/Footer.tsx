@@ -4,10 +4,12 @@ export default function Footer() {
   return (
     <footer id="contact" className="bg-black text-white">
       <div className="max-w-7xl mx-auto px-4 py-16">
-        <div className="grid md:grid-cols-4 gap-12 mb-12">
+        
+        <div className="grid md:grid-cols-3 gap-12 mb-12">
+          
+          {/* KOLOM 1: Logo, Deskripsi, Sosial Media */}
           <div>
-            {/* START: MODIFIKASI UNTUK LOGO */}
-            <div className="flex items-center gap-2 mb-6"> {/* Menambahkan div flex untuk logo dan teks */}
+            <div className="flex items-center gap-2 mb-6"> 
               <img
                 src="/icon/image-removebg-preview.png" // Ganti dengan path logo Anda
                 alt="ClickCreative Logo"
@@ -17,7 +19,6 @@ export default function Footer() {
                 CLICK<span className="text-gray-400">CREATIVE</span>
               </h3>
             </div>
-            {/* END: MODIFIKASI UNTUK LOGO */}
 
             <p className="text-gray-400 font-light leading-relaxed mb-6">
               Mitra tepercaya Anda untuk peralatan acara premium dan layanan luar biasa sejak 2004.
@@ -29,10 +30,10 @@ export default function Footer() {
               <a href="#" className="hover:text-gray-400 transition-colors">
                 <Facebook size={20} />
               </a>
-
             </div>
           </div>
 
+          {/* KOLOM 2: QUICK LINKS */}
           <div>
             <h4 className="text-lg font-bold mb-6 tracking-wide">QUICK LINKS</h4>
             <ul className="space-y-3">
@@ -48,26 +49,11 @@ export default function Footer() {
               ))}
             </ul>
           </div>
-
-          <div>
-            <h4 className="text-lg font-bold mb-6 tracking-wide">OTHER PAGES</h4>
-            <ul className="space-y-3">
-              {['Gallery', 'Testimonials', 'FAQ', 'Blog', 'Careers', 'Terms'].map((link) => (
-                <li key={link}>
-                  <a
-                    href="#"
-                    className="text-gray-400 hover:text-white transition-colors font-light"
-                  >
-                    {link}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-
+          
+          {/* KOLOM 3: CONTACT INFO */}
           <div>
             <h4 className="text-lg font-bold mb-6 tracking-wide">CONTACT INFO</h4>
-            <ul className="space-y-4">
+            <ul className="space-y-4"> 
               <li className="flex items-start gap-3">
                 <MapPin size={20} className="text-gray-400 flex-shrink-0 mt-1" />
                 <span className="text-gray-400 font-light">
@@ -87,8 +73,8 @@ export default function Footer() {
               </li>
               <li className="flex items-center gap-3">
                 <Mail size={20} className="text-gray-400 flex-shrink-0" />
-                <a href="mailto:clickcreative@eventpro.com" className="text-gray-400 hover:text-white transition-colors font-light">
-                  clickcreative@eventpro.com
+                <a href="mailto:clickcreative@gmail.com" className="text-gray-400 hover:text-white transition-colors font-light">
+                  clickcreative@gmail.com
                 </a>
               </li>
             </ul>
@@ -97,7 +83,7 @@ export default function Footer() {
 
         <div className="border-t border-gray-800 pt-8 text-center">
           <p className="text-gray-500 text-sm font-light tracking-wide">
-            &copy; {new Date().getFullYear()} EventPro. All rights reserved.
+            &copy; {new Date().getFullYear()} Click Creative Production. All rights reserved.
           </p>
         </div>
       </div>

@@ -1,14 +1,16 @@
 import { useState, useEffect } from 'react';
-import { Menu, X, Mail, Phone, Instagram, Facebook, Twitter } from 'lucide-react';
-
+// Import icon yang hilang
+import { Menu, X, Mail, Phone, Instagram, Facebook } from 'lucide-react'; 
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   useEffect(() => {
+    // Tentukan kapan status 'isScrolled' berubah.
+    // Jika scrollY > 40px (tinggi top bar), maka isScrolled = true.
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
+      setIsScrolled(window.scrollY > 40); 
     };
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
@@ -18,39 +20,54 @@ export default function Header() {
 
   return (
     <header className="fixed w-full top-0 z-50">
-      <div className={`bg-black text-white py-2 transition-all duration-300 ${isScrolled ? 'opacity-0 h-0 overflow-hidden' : 'opacity-100'}`}>
-        <div className="max-w-7xl mx-auto px-4 flex justify-end items-center gap-6 text-sm">
-          <a href="mailto:info@eventequipment.com" className="flex items-center gap-2 hover:text-gray-300 transition-colors">
-            <Mail size={14} />
-          </a>
-          <a
-            href="https://wa.me/6285793261313"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center gap-2 hover:text-gray-300 transition-colors"
-          >
-            <Phone size={14} />
-          </a>
+      
+      {/* START: BILAH INFORMASI ATAS (TOP BAR) */}
+      <div
+        // Menggunakan transisi pada h-10 (height) dan opacity.
+        // Ketika isScrolled, height menjadi h-0 dan opacity menjadi 0, sehingga Top Bar hilang tanpa meninggalkan 'gap'.
+        className={`hidden md:block bg-white text-black-hidden transition-all duration-300 ease-in-out
+          ${isScrolled ? 'h-0 opacity-0' : 'h-10 opacity-100'}
+        `}
+      >
+        <div className="max-w-7xl mx-auto px-4 h-full flex justify-between items-center text-xs">
+          {/* Kontak Kiri */}
+          <div className="flex gap-6">
+            <a href="mailto:contact@clickcreative.com" className="flex items-center gap-1">
+              <Mail size={14} />
+              <span>contact@clickcreative.com</span>
+            </a>
+            <a href="tel:+6285793261313" className="flex items-center gap-1">
+              <Phone size={14} />
+              <span>+62 857-9326-1313</span>
+            </a>
+          </div>
+          {/* Info Kanan */}
+          <span>SOLUSI PERALATAN EVENT TERPERCAYA ANDA</span>
         </div>
       </div>
+      {/* END: BILAH INFORMASI ATAS */}
 
-      <nav className={`transition-all duration-300 ${isScrolled ? 'bg-black/95 backdrop-blur-md shadow-lg' : 'bg-black'}`}>
-        <div className="max-w-7xl mx-auto px-4 py-4">
+      {/* NAVIGASI UTAMA (MAIN NAV) */}
+      <nav 
+        // Menggunakan isScrolled untuk mengatur padding vertikal, menciptakan efek 'menyusut'
+        className={`shadow-lg transition-all duration-300 ease-in-out ${isScrolled ? 'bg-black py-8' : 'bg-black py-4'}`}
+      >
+        <div className="max-w-7xl mx-auto px-4">
           <div className="flex justify-between items-center">
 
-            {/* START: Modifikasi Logo & Teks */}
-            <div className="flex items-center gap-2"> {/* Menambahkan flex dan gap untuk menyusun logo dan teks */}
+            {/* Logo */}
+            <div className="flex items-center gap-2">
               <img
-                src="/icon/image-removebg-preview.png" // Ganti dengan path atau URL logo Anda
+                src="/icon/image-removebg-preview.png"
                 alt="ClickCreative Logo"
-                className="h-8 w-8 object-contain rounded-full" // Menyesuaikan ukuran dan styling logo
+                className="h-8 w-8 object-contain rounded-full"
               />
               <div className="text-white font-bold text-2xl tracking-tight">
                 CLICK<span className="text-gray-400">CREATIVE</span>
               </div>
             </div>
-            {/* END: Modifikasi Logo & Teks */}
 
+            {/* Menu Desktop */}
             <div className="hidden md:flex items-center gap-8">
               {menuItems.map((item) => (
                 <a
@@ -63,6 +80,7 @@ export default function Header() {
               ))}
             </div>
 
+            {/* Social Media */}
             <div className="hidden md:flex items-center gap-4">
               <a href="#" className="text-white hover:text-gray-300 transition-colors">
                 <Instagram size={18} />
@@ -72,6 +90,7 @@ export default function Header() {
               </a>
             </div>
 
+            {/* Tombol Menu Mobile */}
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               className="md:hidden text-white"
@@ -80,6 +99,7 @@ export default function Header() {
             </button>
           </div>
 
+          {/* Menu Mobile */}
           {isMobileMenuOpen && (
             <div className="md:hidden mt-4 pb-4 border-t border-gray-800">
               {menuItems.map((item) => (

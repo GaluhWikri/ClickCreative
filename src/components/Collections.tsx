@@ -1,3 +1,4 @@
+// galuhwikri/clickcreative/ClickCreative-6dcf166e0dfcaaf82360a8a473d65912e5e1780a/src/components/Collections.tsx
 import { ArrowRight } from 'lucide-react';
 
 const collections = [
@@ -27,7 +28,7 @@ export default function Collections() {
   return (
     <section id="collections" className="py-24 bg-white">
       <div className="max-w-7xl mx-auto px-4">
-        {/* Header Section (Sama seperti sebelumnya) */}
+        {/* Header Section (Disesuaikan agar konsisten dengan About) */}
         <div className="text-center mb-16">
           <div className="inline-block px-4 py-1 border border-black text-xs font-semibold uppercase tracking-widest mb-3">
             KOLEKSI KAMI
@@ -50,29 +51,29 @@ export default function Collections() {
             >
               {/* Image and Zoom Effect */}
               <div
-                className="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110"
+                className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-115" // Durasi zoom diperlambat untuk kesan yang lebih smooth/premium (immersive)
                 style={{ backgroundImage: `url(${collection.image})` }}
               >
                 {/* Dark Overlay (Darker on hover, similar to the original image's contrast) */}
-                <div className="absolute inset-0 bg-black/50 group-hover:bg-black/60 transition-colors duration-500"></div>
+                <div className="absolute inset-0 bg-black/50 group-hover:bg-black/70 transition-colors duration-500"></div> {/* Overlay dibuat lebih gelap saat hover */}
               </div>
 
-              {/* Text Content (Selalu ada di bawah) */}
-              <div className="absolute inset-x-0 bottom-0 p-6 text-white z-10">
+              {/* Text Content (Selalu ada di bawah) - Ditambahkan translate-y effect on hover */}
+              <div className="absolute inset-x-0 bottom-0 p-6 text-white z-10 transition-transform duration-500 group-hover:-translate-y-2">
 
                 {/* Judul */}
-                <h3 className="text-xl font-bold mb-1 tracking-tight">
+                <h3 className="text-2xl font-bold mb-1 tracking-tight"> {/* Judul dibuat sedikit lebih besar */}
                   {collection.title}
                 </h3>
 
                 {/* Deskripsi */}
-                <p className="text-gray-300 text-sm font-light mb-4">
+                <p className="text-gray-300 text-sm font-light mb-4 opacity-90">
                   {collection.description}
                 </p>
 
                 {/* 'View Collection' Link dengan Animasi */}
                 <div className="flex items-center text-sm font-semibold mt-2">
-                  <span className="inline-flex items-center group-hover:translate-x-1 transition-transform duration-300">
+                  <span className="inline-flex items-center group-hover:translate-x-1 transition-transform duration-300 border-b border-transparent group-hover:border-white pb-1"> {/* Tambahkan garis bawah pada hover */}
                     View Collection
                     {/* Ikon Panah */}
                     <ArrowRight size={16} className="ml-2" />

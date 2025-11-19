@@ -1,3 +1,4 @@
+// galuhwikri/clickcreative/ClickCreative-6dcf166e0dfcaaf82360a8a473d65912e5e1780a/src/components/Features.tsx
 import { Award, DollarSign, MapPin, Users } from 'lucide-react';
 
 const features = [
@@ -31,14 +32,16 @@ export default function Features() {
           <h2 className="text-5xl font-bold text-black mb-4 tracking-tight">
             Mengapa Memilih Kami
           </h2>
-          <div className="w-20 h-1 bg-black mx-auto"></div>
+          {/* Diperluas sedikit untuk efek yang lebih dramatis */}
+          <div className="w-24 h-1 bg-black mx-auto"></div>
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           {features.map((feature, index) => (
             <div
               key={index}
-              className="group bg-white p-8 border border-gray-200 hover:border-black transition-all duration-300 hover:shadow-xl"
+              // Dibuat lebih interaktif: shadow, slight translateY on hover, faster transition
+              className="group bg-white p-8 border border-gray-200 transition-all duration-500 hover:border-black hover:shadow-2xl hover:-translate-y-2"
             >
               <div className="mb-6 inline-block p-4 border border-black group-hover:bg-black transition-colors duration-300">
                 <feature.icon

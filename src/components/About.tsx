@@ -1,3 +1,4 @@
+// galuhwikri/clickcreative/ClickCreative-6dcf166e0dfcaaf82360a8a473d65912e5e1780a/src/components/About.tsx
 import { ArrowRight } from 'lucide-react';
 
 // URL placeholder untuk gambar di folder public Anda
@@ -11,8 +12,9 @@ export default function About() {
         <div className="grid md:grid-cols-2 gap-16 items-center">
           <div className="space-y-6">
             <div className="inline-block">
+              {/* Tambahkan efek garis yang lebih modern/halus */}
               <span className="text-sm tracking-widest text-gray-500 font-light">TENTANG KAMI</span>
-              <div className="w-12 h-0.5 bg-black mt-2"></div>
+              <div className="w-16 h-0.5 bg-black mt-2"></div>
             </div>
 
             <h2 className="text-5xl font-bold text-black leading-tight tracking-tight">
@@ -35,19 +37,20 @@ export default function About() {
               hybrid yang memadukan offline dan online.
             </p>
 
-            <button className="group mt-4 border-2 border-black text-black px-8 py-3 hover:bg-black hover:text-white transition-all duration-300 text-sm tracking-widest font-light inline-flex items-center gap-3">
+            {/* CTA button: sedikit lebih besar dan shadow on hover */}
+            <button className="group mt-6 border-2 border-black text-black px-10 py-3.5 hover:bg-black hover:text-white transition-all duration-300 text-sm tracking-widest font-medium inline-flex items-center gap-3 hover:shadow-lg">
             Selengkapnya              <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
             </button>
           </div>
 
-          <div className="relative">
+          <div className="relative group"> {/* Tambahkan group untuk hover effect */}
             {/* START: MODIFIKASI UNTUK MENGGUNAKAN GAMBAR DARI PUBLIC FOLDER */}
             <div 
-              className="aspect-[4/5] relative overflow-hidden border-4 border-white shadow-2xl bg-cover bg-center"
-              style={{ backgroundImage: `url(${ABOUT_IMAGE_URL})` }} // Menggunakan path gambar dari folder public
+              className="aspect-[4/5] relative overflow-hidden border-4 border-white shadow-2xl bg-cover bg-center transition-all duration-500 group-hover:shadow-2xl"
+              style={{ backgroundImage: `url(${ABOUT_IMAGE_URL})` }} 
             >
               {/* Tambahkan overlay gelap di atas gambar untuk kontras teks jika diperlukan */}
-              <div className="absolute inset-0 bg-black/30"></div> 
+              <div className="absolute inset-0 bg-black/10 group-hover:bg-black/20 transition-colors duration-500"></div> 
               
             </div>
             {/* END: MODIFIKASI */}

@@ -1,3 +1,4 @@
+// galuhwikri/clickcreative/ClickCreative-6dcf166e0dfcaaf82360a8a473d65912e5e1780a/src/components/Stats.tsx
 const stats = [
   { number: '4', label: 'Pengalaman Bertahun' },
   { number: '100%', label: 'Klien yang Puas' },
@@ -8,8 +9,10 @@ const stats = [
 export default function Stats() {
   return (
     <section className="relative py-32 overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-br from-black via-gray-900 to-black">
-        <div className="absolute inset-0 bg-black/80"></div>
+      {/* Background dibuat lebih solid/kontras */}
+      <div className="absolute inset-0 bg-black">
+        {/* Efek gradien ringan dihilangkan atau disederhanakan agar lebih bersih */}
+        <div className="absolute inset-0 bg-black/90"></div>
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4">
@@ -17,7 +20,8 @@ export default function Stats() {
           {stats.map((stat, index) => (
             <div
               key={index}
-              className="text-center p-8 border border-white/20 hover:border-white/60 transition-all duration-300 hover:bg-white/5"
+              // Hover effect: slight scale up and stronger border
+              className="text-center p-8 border border-white/20 transition-all duration-300 hover:border-white hover:bg-white/10 transform hover:scale-[1.05]"
             >
               <div className="text-6xl font-bold text-white mb-4 tracking-tight">
                 {stat.number}

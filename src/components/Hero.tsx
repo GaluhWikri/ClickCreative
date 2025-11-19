@@ -1,15 +1,38 @@
 import { ArrowRight } from 'lucide-react';
+import { useState, useEffect } from 'react'; // Import hooks yang diperlukan
 
 // URL placeholder untuk gambar latar belakang. Ganti dengan URL gambar Anda.
 const BACKGROUND_IMAGE_URL = 'https://images.unsplash.com/photo-1683466076402-1fa1df417675?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
 
 export default function Hero() {
+  const [backgroundYOffset, setBackgroundYOffset] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      // Hitung offset berdasarkan posisi scroll.
+      // Faktor 0.2 membuat gambar bergerak 20% lebih lambat dari scroll normal.
+      const offset = window.scrollY * 0.2; 
+      setBackgroundYOffset(offset);
+    };
+
+    // Tambahkan event listener untuk scroll
+    window.addEventListener('scroll', handleScroll);
+
+    // Bersihkan event listener saat komponen di-unmount
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []); // [] memastikan hook hanya berjalan sekali saat mount
+
   return (
     <section id="home" className="relative h-screen w-full overflow-hidden">
       {/* Latar Belakang Gambar dengan Overlay Gelap */}
       <div
         className="absolute inset-0 bg-cover bg-center"
-        style={{ backgroundImage: `url(${BACKGROUND_IMAGE_URL})` }}
+        style={{ 
+          backgroundImage: `url(${BACKGROUND_IMAGE_URL})`,
+          // Terapkan efek Parallax: translateY akan memindahkan gambar ke bawah 
+          // saat halaman di-scroll ke bawah, menetralkan gerakan scroll
+          transform: `translateY(${backgroundYOffset}px)`, 
+        }}
       >
         {/* Overlay Gelap untuk Kontras Teks */}
         <div className="absolute inset-0 bg-black/50"></div>
