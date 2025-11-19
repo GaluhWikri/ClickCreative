@@ -17,13 +17,13 @@ export default function Gallery() {
         {/* Header Section */}
         <div className="text-center mb-16">
           <div className="inline-block px-4 py-1 border border-black text-xs font-semibold uppercase tracking-widest mb-3">
-            GALLERY
+            GALERI
           </div>
           <h2 className="text-5xl font-bold text-black mb-4 tracking-tight">
-            Recent Projects
+            Proyek Terbaru
           </h2>
           <p className="text-gray-600 text-lg font-light max-w-2xl mx-auto">
-            A glimpse into our portfolio of successful events and celebrations.
+            Sekilas tentang portofolio acara dan perayaan kami yang sukses.
           </p>
         </div>
         {/* End Header Section */}

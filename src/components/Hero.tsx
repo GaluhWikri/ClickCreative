@@ -61,7 +61,7 @@ export default function Hero() {
               <button
                 className="group bg-white text-black px-8 py-3 transition-all duration-300 text-sm font-semibold uppercase tracking-wider inline-flex items-center gap-3 hover:bg-gray-200"
               >
-                Explore Collections
+                Jelajahi Koleksi
                 <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
               </button>
               {/* Tombol 2: Contact Us (Transparan, Border Putih) */}
@@ -71,7 +71,7 @@ export default function Hero() {
                 rel="noopener noreferrer" // Praktik keamanan yang baik saat menggunakan target="_blank"
                 className="border border-white text-white px-8 py-3 transition-colors duration-300 text-sm font-semibold uppercase tracking-wider hover:bg-white hover:text-black"
               >
-                Contact Us
+                kontak kami
               </a>
             </div>
           </div>

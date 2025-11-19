@@ -11,11 +11,11 @@ const clients = [
   { name: 'Client 6', image: '/client/ponpes logo.jpg' },
 ];
 
-// Data Statistik yang terlihat di gambar
+// Data Statistik yang terlihat di gambar - COPY DITINGKATKAN
 const statistics = [
-  { count: '50+', label: 'Corporate Events' },
-  { count: '50+', label: 'Wedding Celebrations' },
-  { count: '98%', label: 'Client Retention Rate' }
+  { count: '50+', label: 'Proyek Sukses' },
+  { count: '50+', label: 'Klien Terlayani' },
+  { count: '98%', label: 'Tingkat Kepuasan' }
 ];
 
 export default function Clients() {
@@ -25,13 +25,13 @@ export default function Clients() {
         {/* Header Section */}
         <div className="text-center mb-16">
           <div className="inline-block px-4 py-1 border border-black text-xs font-semibold uppercase tracking-widest mb-3">
-            OUR PARTNERS
+            PALANGGAN KAMI
           </div>
           <h2 className="text-4xl md:text-5xl font-bold text-black mb-4 tracking-tight">
-            Dipercaya Oleh Industri
+            Klien & Mitra Kami
           </h2>
           <p className="text-gray-600 font-light text-base md:text-lg max-w-lg mx-auto">
-            telah dipercaya oleh para industri dan klien terbaik untuk menyelenggarakan momen terpenting mereka
+            Kami bangga telah berkolaborasi dan dipercaya oleh berbagai perusahaan dan institusi terkemuka untuk menyukseskan acara-acara penting mereka.
           </p>
         </div>
         {/* End Header Section */}
@@ -47,7 +47,7 @@ export default function Clients() {
               <img
                 src={client.image}
                 alt={client.name}
-                // grayscale-0 memastikan warna asli di kondisi normal.
+                // Menerapkan hover:grayscale untuk efek hitam-putih saat kursor diarahkan.
                 className="max-h-full max-w-full object-contain filter grayscale-0 hover:grayscale transition-all duration-300"
               />
             </div>
@@ -65,7 +65,7 @@ export default function Clients() {
               <p className="text-4xl md:text-5xl font-extrabold text-black mb-1">
                 {stat.count}
               </p>
-              {/* Label deskriptif */}
+              {/* Label deskriptif BARU */}
               <p className="text-sm font-semibold text-gray-600 uppercase tracking-wider">
                 {stat.label}
               </p>
