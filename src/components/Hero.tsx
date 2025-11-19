@@ -1,66 +1,57 @@
-import { useState, useEffect } from 'react';
 import { ArrowRight } from 'lucide-react';
 
+// URL placeholder untuk gambar latar belakang. Ganti dengan URL gambar Anda.
+const BACKGROUND_IMAGE_URL = 'https://images.unsplash.com/photo-1683466076402-1fa1df417675?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
+
 export default function Hero() {
-  const [scrollY, setScrollY] = useState(0);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrollY(window.scrollY);
-    };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
   return (
     <section id="home" className="relative h-screen w-full overflow-hidden">
+      {/* Latar Belakang Gambar dengan Overlay Gelap */}
       <div
-        className="absolute inset-0 bg-gradient-to-br from-gray-900 via-black to-gray-800"
-        style={{
-          transform: `translateY(${scrollY * 0.5}px)`,
-        }}
+        className="absolute inset-0 bg-cover bg-center"
+        style={{ backgroundImage: `url(${BACKGROUND_IMAGE_URL})` }}
       >
-        <div className="absolute inset-0 bg-black/60"></div>
+        {/* Overlay Gelap untuk Kontras Teks */}
+        <div className="absolute inset-0 bg-black/50"></div>
       </div>
 
-      <div className="relative z-10 h-full flex items-center justify-center text-center px-4">
-        <div className="max-w-4xl animate-fade-in">
-          <h1
-            className="text-6xl md:text-8xl font-bold text-white mb-6 tracking-tight"
-            style={{
-              opacity: 1 - scrollY / 500,
-              transform: `translateY(${scrollY * 0.2}px)`,
-            }}
-          >
-            YOUR EVENT<br />
-            <span className="text-gray-300">EQUIPMENT SOLUTION</span>
-          </h1>
+      {/* Konten Teks dan CTA */}
+      <div className="relative z-10 h-full flex items-center">
+        {/* Container untuk membatasi lebar (max-w-7xl) dan memberi padding horizontal */}
+        <div className="container mx-auto px-4 z-10 relative">
+          <div className="max-w-4xl">
 
-          <p
-            className="text-xl md:text-2xl text-gray-300 mb-12 font-light tracking-wide"
-            style={{
-              opacity: 1 - scrollY / 400,
-              transform: `translateY(${scrollY * 0.15}px)`,
-            }}
-          >
-            Premium Quality. Professional Service. Unforgettable Events.
-          </p>
+            {/* Judul Utama */}
+            <h1 className="text-6xl md:text-7xl lg:text-7xl font-extrabold text-white mb-6 leading-tight">
+              SOLUSI PERALATAN<br />
+              EVENT ANDA
+            </h1>
 
-          <button
-            className="group border-2 border-white text-white px-10 py-4 hover:bg-white hover:text-black transition-all duration-300 text-sm tracking-widest font-light inline-flex items-center gap-3"
-            style={{
-              opacity: 1 - scrollY / 300,
-            }}
-          >
-            EXPLORE COLLECTION
-            <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
-          </button>
-        </div>
-      </div>
+            {/* Subteks */}
+            <p className="text-xl text-white mb-8 font-light tracking-wide max-w-lg">
+                SoundSystem, LiveStream, Lighting, dan aksesoris event berkualitas premium untuk pengalaman tak terlupakan.
+            </p>
 
-      <div className="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce">
-        <div className="w-6 h-10 border-2 border-white rounded-full flex items-start justify-center p-2">
-          <div className="w-1 h-3 bg-white rounded-full animate-pulse"></div>
+            {/* Tombol Aksi (CTA) */}
+            <div className="flex flex-col sm:flex-row gap-4">
+              {/* Tombol 1: Explore Collections (Putih, Teks Hitam) */}
+              <button
+                className="group bg-white text-black px-8 py-3 transition-all duration-300 text-sm font-semibold uppercase tracking-wider inline-flex items-center gap-3 hover:bg-gray-200"
+              >
+                Explore Collections
+                <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
+              </button>
+              {/* Tombol 2: Contact Us (Transparan, Border Putih) */}
+              <a
+                href="https://wa.me/6285793261313" // Menggunakan format internasional (62 untuk Indonesia)
+                target="_blank" // Agar terbuka di tab baru (opsional)
+                rel="noopener noreferrer" // Praktik keamanan yang baik saat menggunakan target="_blank"
+                className="border border-white text-white px-8 py-3 transition-colors duration-300 text-sm font-semibold uppercase tracking-wider hover:bg-white hover:text-black"
+              >
+                Contact Us
+              </a>
+            </div>
+          </div>
         </div>
       </div>
     </section>

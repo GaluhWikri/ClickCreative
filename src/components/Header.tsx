@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Menu, X, Mail, Phone, Instagram, Facebook, Twitter } from 'lucide-react';
 
+
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -22,7 +23,12 @@ export default function Header() {
           <a href="mailto:info@eventequipment.com" className="flex items-center gap-2 hover:text-gray-300 transition-colors">
             <Mail size={14} />
           </a>
-          <a href="tel:+1234567890" className="flex items-center gap-2 hover:text-gray-300 transition-colors">
+          <a
+            href="https://wa.me/6285793261313"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-2 hover:text-gray-300 transition-colors"
+          >
             <Phone size={14} />
           </a>
         </div>
@@ -31,9 +37,19 @@ export default function Header() {
       <nav className={`transition-all duration-300 ${isScrolled ? 'bg-black/95 backdrop-blur-md shadow-lg' : 'bg-black'}`}>
         <div className="max-w-7xl mx-auto px-4 py-4">
           <div className="flex justify-between items-center">
-            <div className="text-white font-bold text-2xl tracking-tight">
-              EVENT<span className="text-gray-400">PRO</span>
+
+            {/* START: Modifikasi Logo & Teks */}
+            <div className="flex items-center gap-2"> {/* Menambahkan flex dan gap untuk menyusun logo dan teks */}
+              <img
+                src="/icon/image-removebg-preview.png" // Ganti dengan path atau URL logo Anda
+                alt="ClickCreative Logo"
+                className="h-8 w-8 object-contain rounded-full" // Menyesuaikan ukuran dan styling logo
+              />
+              <div className="text-white font-bold text-2xl tracking-tight">
+                CLICK<span className="text-gray-400">CREATIVE</span>
+              </div>
             </div>
+            {/* END: Modifikasi Logo & Teks */}
 
             <div className="hidden md:flex items-center gap-8">
               {menuItems.map((item) => (
@@ -53,9 +69,6 @@ export default function Header() {
               </a>
               <a href="#" className="text-white hover:text-gray-300 transition-colors">
                 <Facebook size={18} />
-              </a>
-              <a href="#" className="text-white hover:text-gray-300 transition-colors">
-                <Twitter size={18} />
               </a>
             </div>
 

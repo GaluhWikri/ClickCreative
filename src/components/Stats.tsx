@@ -1,8 +1,8 @@
 const stats = [
-  { number: '20', label: 'Years Experience' },
-  { number: '100%', label: 'Satisfied Clients' },
-  { number: '50+', label: 'Active Members' },
-  { number: '1000+', label: 'Projects Complete' }
+  { number: '4', label: 'Pengalaman Bertahun' },
+  { number: '100%', label: 'Klien yang Puas' },
+  { number: '20+', label: 'Active Members' },
+  { number: '10+', label: 'Projects Complete' }
 ];
 
 export default function Stats() {

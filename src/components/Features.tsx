@@ -3,23 +3,23 @@ import { Award, DollarSign, MapPin, Users } from 'lucide-react';
 const features = [
   {
     icon: Award,
-    title: 'Top Notch Quality',
-    description: 'Premium equipment maintained to the highest standards for flawless events.'
+    title: 'Kualitas Peralatan Premium',
+    description: 'Peralatan audio, lighting, dan stage terawat yang dijaga dengan standar tertinggi untuk menjamin kesuksesan event tanpa cela.'
   },
   {
     icon: DollarSign,
-    title: 'Affordable Pricing',
-    description: 'Competitive rates without compromising on quality or service excellence.'
+    title: 'Harga Kompetitif Terbaik',
+    description: 'Tarif yang transparan dan bersaing, dirancang agar Anda mendapatkan solusi event production terbaik tanpa mengorbankan kualitas dan layanan profesional.'
   },
   {
     icon: MapPin,
-    title: 'Free Site Visit',
-    description: 'Complimentary consultation and site assessment for perfect event planning.'
+    title: 'Gratis Survei Lokasi & Konsultasi',
+    description: 'Konsultasi komplementer dan penilaian lokasi acara oleh tim ahli kami untuk perencanaan event yang sempurna, mulai dari flow hingga teknis..'
   },
   {
     icon: Users,
-    title: 'Professional Team',
-    description: 'Experienced specialists dedicated to making your event unforgettable.'
+    title: 'Tim Produksi Berpengalaman',
+    description: 'Spesialis teknis dan kru terlatih yang berdedikasi untuk memastikan seluruh aspek produksi event Anda berjalan lancar dari awal hingga akhir.'
   }
 ];
 
@@ -29,7 +29,7 @@ export default function Features() {
       <div className="max-w-7xl mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-5xl font-bold text-black mb-4 tracking-tight">
-            Why Choose Us
+            Mengapa Memilih Kami
           </h2>
           <div className="w-20 h-1 bg-black mx-auto"></div>
         </div>

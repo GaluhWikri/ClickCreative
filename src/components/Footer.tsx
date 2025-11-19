@@ -6,22 +6,30 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-4 py-16">
         <div className="grid md:grid-cols-4 gap-12 mb-12">
           <div>
-            <h3 className="text-2xl font-bold mb-6 tracking-tight">
-              EVENT<span className="text-gray-400">PRO</span>
-            </h3>
+            {/* START: MODIFIKASI UNTUK LOGO */}
+            <div className="flex items-center gap-2 mb-6"> {/* Menambahkan div flex untuk logo dan teks */}
+              <img
+                src="/icon/image-removebg-preview.png" // Ganti dengan path logo Anda
+                alt="ClickCreative Logo"
+                className="h-8 w-8 object-contain" // Ukuran logo di footer
+              />
+              <h3 className="text-2xl font-bold tracking-tight">
+                CLICK<span className="text-gray-400">CREATIVE</span>
+              </h3>
+            </div>
+            {/* END: MODIFIKASI UNTUK LOGO */}
+
             <p className="text-gray-400 font-light leading-relaxed mb-6">
-              Your trusted partner for premium event equipment and exceptional service since 2004.
+              Mitra tepercaya Anda untuk peralatan acara premium dan layanan luar biasa sejak 2004.
             </p>
             <div className="flex gap-4">
-              <a href="#" className="hover:text-gray-400 transition-colors">
+              <a href="https://www.instagram.com/clickcreativeproduction/" className="hover:text-gray-400 transition-colors">
                 <Instagram size={20} />
               </a>
               <a href="#" className="hover:text-gray-400 transition-colors">
                 <Facebook size={20} />
               </a>
-              <a href="#" className="hover:text-gray-400 transition-colors">
-                <Twitter size={20} />
-              </a>
+
             </div>
           </div>
 
@@ -63,19 +71,24 @@ export default function Footer() {
               <li className="flex items-start gap-3">
                 <MapPin size={20} className="text-gray-400 flex-shrink-0 mt-1" />
                 <span className="text-gray-400 font-light">
-                  123 Event Street, Business District, City 12345
+                  Karawang barat, Jawa Barat, Indonesia
                 </span>
               </li>
               <li className="flex items-center gap-3">
-                <Phone size={20} className="text-gray-400 flex-shrink-0" />
-                <a href="tel:+1234567890" className="text-gray-400 hover:text-white transition-colors font-light">
-                  +1 (234) 567-890
+                <a
+                  href="https://wa.me/6285793261313"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-3 text-gray-400 hover:text-white transition-colors font-light"
+                >
+                  <Phone size={20} className="text-gray-400 flex-shrink-0" />
+                  +62 (8579) 3261313
                 </a>
               </li>
               <li className="flex items-center gap-3">
                 <Mail size={20} className="text-gray-400 flex-shrink-0" />
-                <a href="mailto:info@eventpro.com" className="text-gray-400 hover:text-white transition-colors font-light">
-                  info@eventpro.com
+                <a href="mailto:clickcreative@eventpro.com" className="text-gray-400 hover:text-white transition-colors font-light">
+                  clickcreative@eventpro.com
                 </a>
               </li>
             </ul>
