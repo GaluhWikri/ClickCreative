@@ -23,7 +23,8 @@ export default function Hero() {
   }, []); // [] memastikan hook hanya berjalan sekali saat mount
 
   return (
-    <section id="home" className="relative h-screen w-full overflow-hidden">
+    // MODIFIKASI: Tambahkan 'animate-fade-in-up' agar Hero selalu terlihat saat render
+    <section id="home" className="relative h-screen w-full overflow-hidden animate-fade-in-up">
       {/* Latar Belakang Gambar dengan Overlay Gelap */}
       <div
         className="absolute inset-0 bg-cover bg-center"

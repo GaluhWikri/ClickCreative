@@ -1,11 +1,17 @@
-// galuhwikri/clickcreative/ClickCreative-6dcf166e0dfcaaf82360a8a473d65912e5e1780a/src/components/About.tsx
+// src/components/About.tsx
 import { ArrowRight } from 'lucide-react';
 
 // URL placeholder untuk gambar di folder public Anda
 const ABOUT_IMAGE_URL = '/image/click.png'; 
 // GANTI DENGAN PATH AKTUAL FILE ANDA, misalnya: '/assets/about-us.webp'
 
-export default function About() {
+// Tambahkan definisi prop
+interface AboutProps {
+  onDetailClick: () => void;
+}
+
+// Ubah definisi fungsi untuk menerima prop
+export default function About({ onDetailClick }: AboutProps) {
   return (
     <section id="about" className="py-24 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4">
@@ -37,10 +43,16 @@ export default function About() {
               hybrid yang memadukan offline dan online.
             </p>
 
-            {/* CTA button: sedikit lebih besar dan shadow on hover */}
-            <button className="group mt-6 border-2 border-black text-black px-10 py-3.5 hover:bg-black hover:text-white transition-all duration-300 text-sm tracking-widest font-medium inline-flex items-center gap-3 hover:shadow-lg">
+            <a 
+              href="#" 
+              onClick={(e) => {
+                e.preventDefault(); 
+                onDetailClick(); 
+              }}
+              className="group mt-6 border-2 border-black text-black px-10 py-3.5 hover:bg-black hover:text-white transition-all duration-300 text-sm tracking-widest font-medium inline-flex items-center gap-3 hover:shadow-lg"
+            >
             Selengkapnya              <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
-            </button>
+            </a>
           </div>
 
           <div className="relative group"> {/* Tambahkan group untuk hover effect */}
@@ -53,7 +65,7 @@ export default function About() {
               <div className="absolute inset-0 bg-black/10 group-hover:bg-black/20 transition-colors duration-500"></div> 
               
             </div>
-            {/* END: MODIFIKASI */}
+
 
             {/* Kotak dekoratif di sudut (tidak berubah) */}
             <div className="absolute -bottom-8 -right-8 w-32 h-32 border-4 border-black"></div>

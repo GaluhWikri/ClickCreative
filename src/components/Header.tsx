@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 // Import icon yang hilang
-import { Menu, X, Mail, Phone, Instagram, Facebook } from 'lucide-react'; 
+import { Menu, X, Mail, Phone, Instagram, Facebook , } from 'lucide-react'; 
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -32,9 +32,9 @@ export default function Header() {
         <div className="max-w-7xl mx-auto px-4 h-full flex justify-between items-center text-xs">
           {/* Kontak Kiri */}
           <div className="flex gap-6">
-            <a href="mailto:contact@clickcreative.com" className="flex items-center gap-1">
+            <a href="mailto:klik.creative.pro@gmail.com" className="flex items-center gap-1">
               <Mail size={14} />
-              <span>contact@clickcreative.com</span>
+              <span>klik.creative.pro@gmail.com</span>
             </a>
             <a href="tel:+6285793261313" className="flex items-center gap-1">
               <Phone size={14} />
