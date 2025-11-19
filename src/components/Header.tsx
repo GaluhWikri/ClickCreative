@@ -58,7 +58,7 @@ export default function Header() {
             {/* Logo */}
             <div className="flex items-center gap-2">
               <img
-                src="/icon/image-removebg-preview.png"
+                src="/icon/logo.png"
                 alt="ClickCreative Logo"
                 className="h-8 w-8 object-contain rounded-full"
               />

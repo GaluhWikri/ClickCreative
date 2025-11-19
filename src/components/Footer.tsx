@@ -21,7 +21,7 @@ export default function Footer() {
             </div>
 
             <p className="text-gray-400 font-light leading-relaxed mb-6">
-              Mitra tepercaya Anda untuk peralatan acara premium dan layanan luar biasa sejak 2004.
+              Mitra tepercaya Anda untuk peralatan acara dan layanan luar biasa sejak 2022.
             </p>
             <div className="flex gap-4">
               <a href="https://www.instagram.com/clickcreativeproduction/" className="hover:text-gray-400 transition-colors">
