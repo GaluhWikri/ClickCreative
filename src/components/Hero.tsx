@@ -57,13 +57,14 @@ export default function Hero() {
 
             {/* Tombol Aksi (CTA) */}
             <div className="flex flex-col sm:flex-row gap-4">
-              {/* Tombol 1: Explore Collections (Putih, Teks Hitam) */}
-              <button
+              {/* Tombol 1: Jelajahi Koleksi (Putih, Teks Hitam) - DIUBAH menjadi <a> dengan href="#projects" */}
+              <a
+                href="#projects" // Link diarahkan ke bagian Projects (Gallery)
                 className="group bg-white text-black px-8 py-3 transition-all duration-300 text-sm font-semibold uppercase tracking-wider inline-flex items-center gap-3 hover:bg-gray-200"
               >
                 Jelajahi Koleksi
                 <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
-              </button>
+              </a>
               {/* Tombol 2: Contact Us (Transparan, Border Putih) */}
               <a
                 href="https://wa.me/6285793261313" // Menggunakan format internasional (62 untuk Indonesia)
@@ -71,7 +72,7 @@ export default function Hero() {
                 rel="noopener noreferrer" // Praktik keamanan yang baik saat menggunakan target="_blank"
                 className="border border-white text-white px-8 py-3 transition-colors duration-300 text-sm font-semibold uppercase tracking-wider hover:bg-white hover:text-black"
               >
-                kontak kami
+                Contact Us
               </a>
             </div>
           </div>

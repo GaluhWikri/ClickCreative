@@ -43,7 +43,6 @@ export default function Gallery() {
                 <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-colors duration-300"></div>
               </div>
 
-
             </div>
           ))}
         </div>
